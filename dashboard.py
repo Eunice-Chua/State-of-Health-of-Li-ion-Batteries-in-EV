@@ -21,7 +21,7 @@ st.set_page_config(
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv(r'C:\Users\hp\Documents\FYP\dashboard\fyp_model\data.csv')
+        df = pd.read_csv(r'./data.csv')
         return df
     except Exception as e:
         st.error(f"Error loading data: {e}")
@@ -31,7 +31,7 @@ def load_data():
 @st.cache_resource
 def load_model():
     try:
-        model_path = r'C:\Users\hp\Documents\FYP\dashboard\fyp_model\best_xgb_model.json'
+        model_path = r'./best_xgb_model.json'
         model = xgb.Booster()
         model.load_model(model_path)
         return model
@@ -89,7 +89,7 @@ elif page == "Battery Analysis":
     @st.cache_data
     def load_analysis_data():
         try:
-            df_analysis = pd.read_csv(r'C:\Users\hp\Documents\FYP_V0.2\Discharge data\combined_discharge_data.csv')
+            df_analysis = pd.read_csv(r'./combined_discharge_data.csv')
 
             return df_analysis
         except Exception as e:
