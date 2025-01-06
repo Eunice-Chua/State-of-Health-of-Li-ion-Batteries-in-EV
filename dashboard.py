@@ -208,10 +208,10 @@ elif page == "SOH Prediction":
                 # Determine the battery condition based on SOH
                 if soh_percentage >= 80.0:
                     condition = "Good health. ✅"
-                    st.success(f"Predicted SOH: {soh_percentage}% - {condition}")
+                    st.success(f"Predicted SOH: {soh_percentage:.2f}% - {condition}")
                 else:
                     condition = "No longer usable. ⚠️"
-                    st.error(f"Predicted SOH: {soh_percentage}% - {condition}")
+                    st.error(f"Predicted SOH: {soh_percentage:.2f}% - {condition}")
         
                 # Store prediction in session state
                 if 'predictions' not in st.session_state:
